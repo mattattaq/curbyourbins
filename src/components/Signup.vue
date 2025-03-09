@@ -1,79 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-import emailjs from 'emailjs-com';
-const name = ref('');
-const email = ref('');
-const address = ref('');
-const serviceType = ref('trashOnly');
-const prepay = ref(false);
-const price = ref(5.00);
-// Load Google API script
-const loadGoogleAPI = () => {
-    const script = document.createElement("script");
-    script.src = "https://apis.google.com/js/api.js";
-    script.onload = () => {
-        window.gapi.load("client:auth2", initGoogleCalendar);
-    };
-    document.body.appendChild(script);
-};
-
-// Initialize Google Calendar API
-const initGoogleCalendar = () => {
-    window.gapi.client.init({
-        apiKey: "AIzaSyA1hbksR9g7xOO_KapFLtBrANb8BzqFpEA",
-        clientId: "531966254342-tbgblj53eptqvoq4ekrku6cdc8n9ro44.apps.googleusercontent.com",
-        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-        scope: "https://www.googleapis.com/auth/calendar.events"
-    }).then(() => {
-        console.log("Google Calendar API Loaded");
-    }).catch(err => console.error("Google API Error:", err));
-};
-
-// Sign in to Google Calendar
-const signInToGoogle = async () => {
-    try {
-        await window.gapi.auth2.getAuthInstance().signIn();
-        console.log("Signed in to Google Calendar");
-    } catch (error) {
-        console.error("Sign-in failed", error);
-    }
-};
-
-// Create a Google Calendar Event
-const createCalendarEvent = () => {
-    const event = {
-        summary: "Curb Your Bins - Trash Pickup",
-        location: address.value,
-        description: `Service: ${serviceType.value === 'trashOnly' ? "Trash Only" : "Trash & Recycling"}\nPaid: $${price.value.toFixed(2)}`,
-        start: {
-            dateTime: new Date().toISOString(), // Event time (adjust as needed)
-            timeZone: "America/Indianapolis",
-        },
-        end: {
-            dateTime: new Date(Date.now() + 3600000).toISOString(), // 1 hour duration
-            timeZone: "America/Indianapolis",
-        }
-    };
-
-    window.gapi.client.calendar.events.insert({
-        calendarId: "primary",
-        resource: event
-    }).then(response => {
-        alert("Google Calendar event created!");
-        console.log("Event Created:", response);
-    }).catch(err => console.error("Error creating event:", err));
-};
-
-// Call this function after PayPal payment is completed
-const handleSuccessfulPayment = async () => {
-    await signInToGoogle(); // Ensure user is signed in
-    createCalendarEvent();  // Add event to Google Calendar
-};
-
-// Load Google API when component is mounted
-onMounted(() => {
-    loadGoogleAPI();
-});
 </script>
 <template>
     <section id="signup">
@@ -114,6 +39,7 @@ onMounted(() => {
             <div id="paypal-button-container"></div>
         </div>
     </section>
+    <section id="splash-two"></section>
 </template>
 
 <script setup>
@@ -167,12 +93,11 @@ const renderPayPalButton = () => {
             });
         },
         onApprove: (data, actions) => {
-    return actions.order.capture().then(details => {
-        alert(`Transaction completed by ${details.payer.name.given_name}`);
-        sendEmailConfirmation(); // Send confirmation email
-        handleSuccessfulPayment(); // Add to Google Calendar
-    });
-}
+            return actions.order.capture().then(details => {
+                alert(`Transaction completed by ${details.payer.name.given_name}`);
+                sendEmailConfirmation(); // Send email after successful payment
+            });
+        }
     }).render("#paypal-button-container");
 };
 
@@ -233,5 +158,15 @@ input[type="checkbox"] {
 
 #paypal-button-container {
     margin-top: 20px;
+}
+
+#splash-two {
+    width: 100%;
+    min-height: 500px;
+    background-image: url('../assets/curbyourbins.webp');
+    display: flex;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 </style>
