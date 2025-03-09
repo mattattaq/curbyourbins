@@ -6,7 +6,8 @@
     <section id="hero">
         <div class="container">
             <h1>Skip the hassle! For <span class="red">$5</span> let me handle your bins!</h1>
-            <center><button>Sign up now!</button></center>
+            <center><a href="#signup"><button>Sign up
+                        now!</button></a></center>
         </div>
     </section>
 </template>

@@ -24,6 +24,10 @@
                 <p>For $5, or almost the cost of a latte I'll take your bin to the curb. For $7.50 I'll take your bin on
                     Sunday and your Recycling on Monday. Like you my pickup is Monday for Trash and Tuesday for
                     Recycling.</p>
+                <P><b>Can I book for multiple weeks?</b></P>
+                <p>Certainly, if you'd like to get the month I'd take $17/month.</p>
+                <p><b>May I buy on behalf of someone?</b></p>
+                <p>That's a great question, as long as they are in Warren Park I'll take out their trash.</p>
             </div>
             <div class="half">
                 <img src="../assets/matt.jpg" alt="Matthew Allbright">
