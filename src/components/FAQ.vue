@@ -2,8 +2,10 @@
 </script>
 <!-- FAQ: When, where, how it works. -->
 <template>
-    <section>
-        <h2>FAQ</h2>
+    <section id="faq">
+        <div class="container">
+            <h2>FAQ</h2>
+        </div>
     </section>
 </template>
 
