@@ -5,7 +5,7 @@
 <template>
     <section id="hero">
         <div class="container">
-            <h1>Skip the hassle! For <span class="red">$5</span> let me handle your bins!</h1>
+            <h1>Ditch the chore! I’ll curb your bins for <span class='red'>$5</span>!</h1>
             <center><a href="#signup"><button>Sign up
                         now!</button></a></center>
         </div>

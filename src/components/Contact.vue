@@ -22,43 +22,28 @@
                 </div>
                 <button type="submit">Send Message</button>
             </form>
-
-            <div v-if="messageSent" class="confirmation">
-                <p>Thank you for reaching out! I'll get back to you as soon as possible.</p>
-            </div>
         </div>
     </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import emailjs from 'emailjs-com';
 
 const contactName = ref('');
 const contactEmail = ref('');
 const contactMessage = ref('');
-const messageSent = ref(false);
 
 const handleSubmit = () => {
-    const templateParams = {
-        user_name: contactName.value,
-        user_email: contactEmail.value,
-        message: contactMessage.value,
-    };
+    const email = "mattatttaq@gmail.com"; // Replace with your actual email
+    const subject = encodeURIComponent("Curb Your Bins - Inquiry");
+    const body = encodeURIComponent(
+        `Name: ${contactName.value}\nEmail: ${contactEmail.value}\n\nMessage:\n${contactMessage.value}`
+    );
 
-    emailjs.send('service_wyjwlam', 'template_h63ir6r', templateParams, '87ACKoygvoido7HBh')
-        .then(() => {
-            messageSent.value = true; // Show confirmation message
-            // Clear form fields
-            contactName.value = '';
-            contactEmail.value = '';
-            contactMessage.value = '';
-        })
-        .catch((error) => {
-            console.error("Error sending message:", error);
-        });
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 };
 </script>
+
 
 <style scoped>
 #contact {
