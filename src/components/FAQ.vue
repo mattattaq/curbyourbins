@@ -1,4 +1,3 @@
-<style scoped></style>
 <template>
     <section id="faq">
         <div class="container">
@@ -45,17 +44,17 @@
     margin: 0 auto;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
 .faq-item {
     background-color: #fff;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 h3 {

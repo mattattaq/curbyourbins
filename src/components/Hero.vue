@@ -32,7 +32,7 @@
 
 button {
     background-color: var(--gold);
-    padding: 8px 8px;
+    padding: 12px 12px;
     border-radius: 5px;
     border: none;
     min-width: 150px;

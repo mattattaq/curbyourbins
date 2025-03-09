@@ -1,5 +1,6 @@
 <template>
     <section id="contact">
+        <img src="../assets/cutebin.webp" alt="Cute Trash Bin" class="circle">
         <div class="container">
             <h2>Contact Me</h2>
             <p>If you have any questions, concerns, or just want to chat about the service, feel free to reach out. I'm
@@ -57,6 +58,25 @@ const handleSubmit = () => {
     margin: 0 auto;
 }
 
+.circle {
+    width: auto;
+    max-width: 300px;
+    border-radius: 25%;
+}
+
+.confirmation {
+    margin-top: 20px;
+    background-color: #e9f7e9;
+    padding: 15px;
+    border-radius: 5px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -65,10 +85,6 @@ h2 {
 p {
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
     margin-bottom: 1.5rem;
 }
 
@@ -103,14 +119,5 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-
-.confirmation {
-    margin-top: 20px;
-    background-color: #e9f7e9;
-    padding: 15px;
-    border-radius: 5px;
-    color: #4CAF50;
-    font-weight: bold;
 }
 </style>

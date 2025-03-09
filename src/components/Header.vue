@@ -8,7 +8,7 @@
             <li><a href="#pricing">Price</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="https://paypal.me/curbyourbins?country.x=US&locale.x=en_US">Sign Up Now</a></li>
+            <li><a href="#signup">Sign Up Now</a></li>
         </ul>
     </header>
 </template>
