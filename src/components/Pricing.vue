@@ -2,10 +2,10 @@
 </script>
 <!-- Pricing & Deals: Weekly rate + potential prepay discount (e.g., $18/month instead of $20). -->
 <template>
-    <section id="pricing">
+    <section id="about">
         <div class="container">
             <div class="half fade-in">
-                <h2>Pricing</h2>
+                <h2>About Me</h2>
                 <p><b>Who are you and why do you want my trash?</b></p>
                 <p>I’m Matthew Allbright, a software developer who was recently laid off. While searching for my
                     next opportunity, I figured I’d offer my assistance to my neighbors. I don’t <i>want</i> your trash
@@ -26,7 +26,7 @@
                         Monday.</li>
                 </ul>
                 <P><b>Can I book for multiple weeks?</b></P>
-                <p>Certainly, if you'd like to get the month I'd take $17/month.</p>
+                <p>Certainly, if you'd like to get the month trash only is $17 for 4 consecutive weeks and $22 for trash AND recycling.</p>
                 <p><b>May I buy on behalf of someone?</b></p>
                 <p>That's a great question, as long as they are in Warren Park I'll take out their trash.</p>
             </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="container full">
             <h2>What is the coverage area?</h2>
-            <p>The coverage area for Curb Your Bins is focused on the neighborhoods surrounding Irvington Terrace Woods Park. Since this is a walking-based service, I aim to keep the coverage close to the green pin marked on the map. If you're nearby and unsure whether you're within the area, feel free to reach out!</p>
+            <p>The coverage area for Curb Your Bins is focused on the neighborhoods surrounding Irvington Terrace Woods Park. Since this is a walking-based service, I aim to keep the coverage close to the blue pin marked on the map. If you're nearby and unsure whether you're within the area, feel free to reach out!</p>
             <img class="auto-img" src="../assets/coverage.png" alt="Thie is the coverage area, it's Warren Park in Indianapolis">
         </div>
     </section>

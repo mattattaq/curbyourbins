@@ -31,7 +31,7 @@
                         <input type="checkbox" id="prepay" v-model="prepay" />
                         Prepay for a Month? 
                     </label>
-                    <span>Get 4 consecutive weeks of service for just $17 for trash and $27 for both when you prepay!</span>
+                    <span>Get 4 consecutive weeks of service for just $17 for trash and $25.50 for both when you prepay!</span>
                 </div>
                 <div id="total">${{ price }}</div>
             </form>
@@ -56,7 +56,7 @@ const price = ref(5.00);
 
 const updatePrice = () => {
     if (prepay.value) {
-        price.value = serviceType.value === 'trashOnly' ? 17.00 : 27;
+        price.value = serviceType.value === 'trashOnly' ? 17.00 : 22;
     } else {
         price.value = serviceType.value === 'trashOnly' ? 5.00 : 7.50;
     }
