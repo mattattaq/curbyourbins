@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
     <section id="signup">
         <div class="container">
@@ -28,11 +26,14 @@
                         <option value="trashAndRecycling">Trash & Recycling - $7.50</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="prepay">Prepay for a Month?</label>
-                    <input type="checkbox" id="prepay" v-model="prepay" />
-                    <span>Save $1/month when you prepay!</span>
+                <div class="form-group left">
+                    <label for="prepay">
+                        <input type="checkbox" id="prepay" v-model="prepay" />
+                        Prepay for a Month? 
+                    </label>
+                    <span>Get 4 consecutive weeks of service for just $17 for trash and $27 for both when you prepay!</span>
                 </div>
+                <div id="total">${{ price }}</div>
             </form>
 
             <!-- PayPal Button Container -->
@@ -55,7 +56,7 @@ const price = ref(5.00);
 
 const updatePrice = () => {
     if (prepay.value) {
-        price.value = serviceType.value === 'trashOnly' ? 17.00 : 25.50;
+        price.value = serviceType.value === 'trashOnly' ? 17.00 : 27;
     } else {
         price.value = serviceType.value === 'trashOnly' ? 5.00 : 7.50;
     }
@@ -122,7 +123,11 @@ onMounted(loadPayPal);
     padding: 30px;
     text-align: center;
 }
-
+#total {
+    color: green;
+    font-weight: bold;
+    font-size: 24px;
+}
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -168,5 +173,8 @@ input[type="checkbox"] {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+.left {
+    text-align: left;
 }
 </style>

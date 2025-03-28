@@ -15,7 +15,15 @@ body {
   padding: 5px;
   max-width: 1200px;
 }
-
+.full {
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.auto-img {
+  width: 100%;
+}
 h1, h2, h3 {
   font-family: 'Bangers', sans-serif;
 }

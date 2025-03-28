@@ -34,6 +34,11 @@
                 <img src="../assets/matt.jpg" alt="Matthew Allbright">
             </div>
         </div>
+        <div class="container full">
+            <h2>What is the coverage area?</h2>
+            <p>The coverage area for Curb Your Bins is focused on the neighborhoods surrounding Irvington Terrace Woods Park. Since this is a walking-based service, I aim to keep the coverage close to the green pin marked on the map. If you're nearby and unsure whether you're within the area, feel free to reach out!</p>
+            <img class="auto-img" src="../assets/coverage.png" alt="Thie is the coverage area, it's Warren Park in Indianapolis">
+        </div>
     </section>
     <section id="splash">
     </section>
